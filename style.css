@@ -1,0 +1,137 @@
+* {  
+    font-family: 'Red Hat Text';
+    box-sizing: border-box; 
+    margin: 0;
+    font-weight: 700;
+}
+body {
+    background: url(images/pattern-hills.svg), url(images/bg-stars.svg), hsl(235, 16%, 14%);
+    background-repeat: no-repeat, repeat-x, no-repeat; 
+    background-position: bottom;
+    background-attachment: scroll, fixed, scroll;     
+    background-size: auto, auto , auto; 
+    animation: stars 400s linear infinite forwards;      
+} 
+@keyframes stars {
+    /* 0% {
+        background-position: bottom,0%,bottom;
+    }
+    50% {
+        background-position: bottom, 1000%,bottom;  
+    }
+    100% {
+        background-position: bottom,0%,bottom;  
+    } */ 
+    0% {
+        background-position: bottom,0%,bottom;
+    }   
+    100% {
+        background-position: bottom, 10000px,bottom;  
+    } 
+}
+main {
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} 
+#page-heading {
+    color: white;
+    letter-spacing: 6px;
+    text-align: center; 
+    text-transform: uppercase;   
+    font-size: 1.3rem; 
+} 
+#page-heading span {
+    font-style: italic; 
+}
+#date-section {
+    display: flex;
+    gap: 40px; 
+    margin: 15% auto; 
+    justify-content: center; 
+}
+#date-section > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    gap: 25px;
+}
+#date-section > div > p { 
+    color: hsl(237, 18%, 59%);
+    text-transform: uppercase;
+    font-size: .8rem; 
+    letter-spacing: 4px; 
+}
+.output {
+    font-size: 4.5rem;      
+    color: hsl(345, 95%, 68%);
+    border-radius: 5px;
+    padding: 10px 15px;  
+    width: 125px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(to bottom,hsl(237, 16%, 22%) 50% 50%, hsl(236, 21%, 26%) 50% 50%);
+    box-shadow: 0 8px 0 rgba(0, 0, 0, 0.2);   
+    position: relative; 
+    cursor: pointer; 
+    transition: .2s; 
+}
+.output:hover {
+    color: hsl(345, 100%, 64%);  
+}
+.output:active { 
+    transform: translateY(8px); 
+    border-radius: 12px;   
+    box-shadow: none;    
+}
+.output::after {
+    content: ''; 
+    position: absolute;
+    top: 50%; 
+    transform: translateY(-50%); 
+    left: 0; 
+    width: 100%; 
+    height: 2px;   
+    background: rgba(0, 0, 0, 0.05); 
+}
+footer {
+    display: flex;
+    align-items: center; 
+    gap: 20px;  
+    flex-direction: column; 
+}
+#social-media-icons {
+    display: flex;
+    gap: 20px;
+}
+a {
+    transition: .2s; 
+}
+a:hover {
+    transform: scale(1.4);    
+}
+a svg path {
+    transition: .2s;   
+}
+a:hover svg path {
+    fill: hsl(345, 95%, 68%);
+}
+
+@media screen and (max-width: 650px) {
+    #date-section {
+        gap: 18px;  
+    }
+    #date-section > div {
+        gap: 20px;
+    }
+    #date-section > div > p { 
+        font-size: .6rem;   
+        letter-spacing: 2px;  
+    }
+    .output {
+        font-size: 2.5rem;        
+        width: 20vw;    
+    }
+}
