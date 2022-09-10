@@ -1,1 +1,1 @@
-This project was fun as I have created a countdown timer in the past however I couldn't create the folding animation but everything else works fine.
+This project was fun as I have created a countdown timer in the past, however I couldn't create the folding animation but everything else works fine.
