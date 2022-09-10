@@ -2,16 +2,17 @@ const daysOutput = document.getElementById('dayOutput');
 const hoursOutput = document.getElementById('hourOutput');
 const minutesOutput = document.getElementById('minuteOutput');
 const secondsOutput = document.getElementById('secondOutput');
+const outputs = document.querySelectorAll('.output')
 
-const daysOutputLabel = document.getElementById('dayOutput').nextElementSibling;
-const hoursOutputLabel = document.getElementById('hourOutput').nextElementSibling;
-const minutesOutputLabel = document.getElementById('minuteOutput').nextElementSibling;
-const secondsOutputLabel = document.getElementById('secondOutput').nextElementSibling;
+const daysOutputLabel = document.getElementById('dayOutput').parentElement.parentElement.lastElementChild;
+const hoursOutputLabel = document.getElementById('hourOutput').parentElement.parentElement.lastElementChild;
+const minutesOutputLabel = document.getElementById('minuteOutput').parentElement.parentElement.lastElementChild;
+const secondsOutputLabel = document.getElementById('secondOutput').parentElement.parentElement.lastElementChild;  
 
 
 // const dateSet = new Date(JSON.parse(localStorage.getItem('dateSet'))) || new Date(09/09/2022)
 
-const dateSet = new Date(new Date().setDate(new Date().getDate() + 2));    
+const dateSet = new Date(new Date().setDate(new Date().getDate() + 14));     
 
 function countdown() {
     let currentDate = new Date();
@@ -48,6 +49,5 @@ function countdown() {
     }else { 
         secondsOutputLabel.innerText = 'seconds';
     }
-
 }
-setInterval(countdown, 1000)
+setInterval(countdown, 1000);

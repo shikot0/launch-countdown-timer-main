@@ -64,11 +64,10 @@ main {
     letter-spacing: 4px; 
 }
 .output {
-    font-size: 4.5rem;      
-    color: hsl(345, 95%, 68%);
     border-radius: 5px;
     padding: 10px 15px;  
-    width: 125px; 
+    width: 150px; 
+    height: 130px;  
     display: flex;
     justify-content: center;
     align-items: center;
@@ -77,6 +76,11 @@ main {
     position: relative; 
     cursor: pointer; 
     transition: .2s; 
+    overflow: hidden;
+}
+.output h2 {
+    font-size: 4.5rem;      
+    color: hsl(345, 95%, 68%);   
 }
 .output:hover {
     color: hsl(345, 100%, 64%);  
@@ -95,6 +99,35 @@ main {
     width: 100%; 
     height: 2px;   
     background: rgba(0, 0, 0, 0.05); 
+}
+.edges {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%; 
+}
+.edges::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -7.5px; 
+    transform: translateY(-50%);
+    width: 15px; 
+    height: 15px;
+    background-color: black; 
+    border-radius: 100px;
+}
+.edges::after {
+    content: '';
+    position: absolute; 
+    top: 50%;  
+    right: -7.5px;    
+    transform: translateY(-50%);
+    width: 15px; 
+    height: 15px;
+    background-color: black; 
+    border-radius: 100px;
 }
 footer {
     display: flex;
@@ -119,7 +152,7 @@ a:hover svg path {
     fill: hsl(345, 95%, 68%);
 }
 
-@media screen and (max-width: 650px) {
+@media screen and (max-width: 750px) { 
     #date-section {
         gap: 18px;  
     }
@@ -131,7 +164,10 @@ a:hover svg path {
         letter-spacing: 2px;  
     }
     .output {
-        font-size: 2.5rem;        
-        width: 20vw;    
+        width: 20vw;   
+        height: auto;  
+    }
+    .output h2 {
+        font-size: 2.5rem;         
     }
 }
